@@ -1,4 +1,4 @@
-# Documentación del Backend para la Tabla "actor"
+# Documentación del Backend para la Tabla Actor
 
 Este proyecto implementa un backend utilizando Express.js y MySQL para realizar operaciones CRUD en la tabla "actor". A continuación, se describen las rutas y operaciones disponibles.
 
