@@ -16,7 +16,6 @@ db.connect((err) => {
   }
 });
 
-// Obtener todos los actores
 const getAllActors = (req, res) => {
   const query = 'SELECT * FROM actor';
   db.query(query, (err, results) => {
@@ -28,7 +27,6 @@ const getAllActors = (req, res) => {
   });
 };
 
-// Obtener un actor por ID
 const getActorById = (req, res) => {
   const actorId = req.params.id;
   const query = 'SELECT * FROM actor WHERE actor_id = ?';
@@ -43,7 +41,6 @@ const getActorById = (req, res) => {
   });
 };
 
-// Crear un nuevo actor
 const createActor = (req, res) => {
   const { first_name, last_name } = req.body;
   if (!first_name || !last_name) {
@@ -60,7 +57,6 @@ const createActor = (req, res) => {
   }
 };
 
-// Actualizar un actor por ID
 const updateActor = (req, res) => {
   const actorId = req.params.id;
   const { first_name, last_name } = req.body;
@@ -78,7 +74,6 @@ const updateActor = (req, res) => {
   }
 };
 
-// Eliminar un actor por ID
 const deleteActor = (req, res) => {
   const actorId = req.params.id;
   const query = 'DELETE FROM actor WHERE actor_id = ?';

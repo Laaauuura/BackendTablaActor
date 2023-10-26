@@ -1,11 +1,10 @@
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-
-const User = require('../models/userModel'); // Debes tener un modelo de usuario
+const User = require('../app/models/userModel'); // Importa el modelo de usuario
 
 passport.use(new LocalStrategy(
   (username, password, done) => {
-    User.findByUsername(username, (err, user) => {
+    User.findOne({ username }, (err, user) => {
       if (err) {
         return done(err);
       }
